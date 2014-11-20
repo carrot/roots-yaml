@@ -1,0 +1,39 @@
+{
+  "name": "roots-yaml",
+  "version": "0.0.0",
+  "description": "Load YAML data files into your roots project.",
+  "main": "lib",
+  "directories": {
+    "test": "test"
+  },
+  "dependencies": {
+    "lodash": "2.x",
+    "minimatch": "0.2.x",
+    "roots-util": "0.0.4"
+  },
+  "devDependencies": {
+    "coffee-script": "1.7.x",
+    "mocha": "*",
+    "should": "*",
+    "roots": "3.x"
+  },
+  "peerDependencies": {
+    "roots": "3.x"
+  },
+  "scripts": {
+    "test": "mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/joshrowley/roots-yaml.git"
+  },
+  "keywords": [
+    "roots-extension"
+  ],
+  "author": "joshrowley",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/joshrowley/roots-yaml/issues"
+  },
+  "homepage": "https://github.com/joshrowley/roots-yaml"
+}
