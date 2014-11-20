@@ -7,21 +7,55 @@ Load YAML data files into your roots project.
 
 > **Note:** This project is in early development, and versioning is a little different. [Read this](http://markup.im/#q4_cRZ1Q) for more details.
 
+### Why Should You Care?
+
+It's important to maintain clean DRY code. Instead of writing messy and duplicated
+markup, you can use the power of HTML precompilers and pass data into your
+templates.
+
+Roots-YAML lets you store your site data in [YAML](http://www.yaml.org/), a human
+friendly data serialization format and then have that data exposed for you to
+use in your roots view templates.
+
 ### Installation
 
 - make sure you are in your roots project directory
 - `npm install roots-yaml --save`
 - modify your `app.coffee` file to include the extension, as such
 
-  ```coffee
-  roots_yaml = require('roots-yaml')
+```coffee
+roots_yaml = require('roots-yaml')
 
-  module.exports =
-    extensions: [roots_yaml()]
-  ```
+module.exports =
+  extensions:
+    roots_yaml
+      source: 'data'  # default value, you can also pass in an array of strings
+```
 
 ### Usage
 
+Roots-YAML will look in your source directories and load any `.yaml`
+files into a `data` object for you to use in your views.
+
+Each YAML file will be loaded using [js-yaml](https://github.com/nodeca/js-yaml)
+and have the result set to `data.<file_name>`.
+
+For example, if I have a directory `data` structured like this:
+
+```
+data/
+  staff.yaml
+  clients.yaml
+  misc/
+    doges.yaml
+    manatoges.yaml
+```
+
+Inside my view templates:
+
+`data.staff` returns the data in `data/staff.yaml`
+
+`data.misc.manatoges` returns the data in `data/misc/manatoges`
 
 ### License & Contributing
 
