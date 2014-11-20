@@ -27,3 +27,7 @@ describe 'development', ->
   it 'compiles basic project', ->
     p = path.join(@public, 'index.html')
     h.file.exists(p).should.be.ok
+
+  it "doesn't write the yaml file", ->
+    p = path.join(@public, 'manatoge.yaml')
+    h.file.exists(p).should.not.be.ok
