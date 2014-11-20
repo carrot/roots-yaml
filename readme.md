@@ -1,7 +1,7 @@
 Roots-yaml
 =============================
 
-[![npm](https://badge.fury.io/js/roots-yaml.png)](http://badge.fury.io/js/roots-yaml) [![tests](https://travis-ci.org/joshrowley/roots-yaml.png?branch=master)](https://travis-ci.org/joshrowley/roots-yaml) [![dependencies](https://david-dm.org/joshrowley/roots-yaml.png?theme=shields.io)](https://david-dm.org/joshrowley/roots-yaml)
+[![npm](https://badge.fury.io/js/roots-yaml.png)](http://badge.fury.io/js/roots-yaml) [![tests](https://travis-ci.org/carrot/roots-yaml.png?branch=master)](https://travis-ci.org/carrot/roots-yaml) [![dependencies](https://david-dm.org/carrot/roots-yaml.png?theme=shields.io)](https://david-dm.org/carrot/roots-yaml) [![Coverage Status](https://img.shields.io/coveralls/carrot/roots-netlify.svg)](https://coveralls.io/r/carrot/roots-yaml?branch=master)
 
 Load YAML data files into your roots project.
 
@@ -17,7 +17,7 @@ Load YAML data files into your roots project.
   roots_yaml = require('roots-yaml')
 
   module.exports =
-    extensions: [new roots_yaml]
+    extensions: [roots_yaml()]
   ```
 
 ### Usage

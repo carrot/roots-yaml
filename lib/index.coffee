@@ -7,18 +7,18 @@ path = require 'path'
 # http://roots.readthedocs.org/en/latest/extensions.html
 
 module.exports = ->
-  class Roots-yamlExtension
+  class RootsYAML
 
     constructor: (@roots) ->
       # console.log @roots
 
-    fs: ->
+    # fs: ->
       # category: 'foo'
       # extract: true
       # detect: (f) =>
         # path.extname(f.relative) == 'js'
 
-    compile_hooks: ->
+    # compile_hooks: ->
       # category: 'foo'
 
       # before_file: (ctx) =>
@@ -36,7 +36,7 @@ module.exports = ->
       # write: ->
         # false
 
-    category_hooks: ->
+    # category_hooks: ->
       # after: (ctx) =>
           # output = path.join(ctx.roots.config.output_path(), 'build.js')
           # nodefn.call(fs.writeFile, output, @contents)
