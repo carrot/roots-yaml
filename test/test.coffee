@@ -31,3 +31,7 @@ describe 'development', ->
   it "doesn't write the yaml file", ->
     p = path.join(@public, 'manatoge.yaml')
     h.file.exists(p).should.not.be.ok
+
+  it "exposes data into the view templates", ->
+    p = path.join(@public, 'index.html')
+    h.file.contains(p, ['doge', 'manatoge', 'fuzzy', 'cowlike'])
