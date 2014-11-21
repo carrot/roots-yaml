@@ -1,4 +1,4 @@
-Roots-yaml
+Roots-YAML
 =============================
 
 [![npm](https://badge.fury.io/js/roots-yaml.png)](http://badge.fury.io/js/roots-yaml) [![tests](https://travis-ci.org/carrot/roots-yaml.png?branch=master)](https://travis-ci.org/carrot/roots-yaml) [![dependencies](https://david-dm.org/carrot/roots-yaml.png?theme=shields.io)](https://david-dm.org/carrot/roots-yaml) [![Coverage Status](https://img.shields.io/coveralls/carrot/roots-netlify.svg)](https://coveralls.io/r/carrot/roots-yaml?branch=master)
@@ -29,12 +29,12 @@ roots_yaml = require('roots-yaml')
 module.exports =
   extensions:
     roots_yaml
-      source: 'data'  # default value, you can also pass in an array of strings
+      source: 'data'  # default value
 ```
 
 ### Usage
 
-Roots-YAML will look in your source directories and load any `.yaml`
+Roots-YAML will look in your source directory and load any `.yaml`
 files into a `data` object for you to use in your views.
 
 Each YAML file will be loaded using [js-yaml](https://github.com/nodeca/js-yaml)
