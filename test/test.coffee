@@ -20,7 +20,7 @@ after ->
 
 # tests
 
-describe 'development', ->
+describe 'basic compile', ->
 
   before (done) -> compile_fixture.call(@, 'basic', -> done())
 
@@ -33,5 +33,12 @@ describe 'development', ->
     h.file.exists(p).should.not.be.ok
 
   it "exposes data into the view templates", ->
+    p = path.join(@public, 'index.html')
+    h.file.contains(p, ['doge', 'manatoge', 'fuzzy', 'cowlike'])
+
+describe 'custom directory', ->
+  before (done) -> compile_fixture.call(@, 'custom_dir', -> done())
+
+  it "loads data from a custom directory", ->
     p = path.join(@public, 'index.html')
     h.file.contains(p, ['doge', 'manatoge', 'fuzzy', 'cowlike'])
