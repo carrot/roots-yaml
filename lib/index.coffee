@@ -1,6 +1,7 @@
 RootsUtil = require 'roots-util'
 path = require 'path'
 yaml = require 'js-yaml'
+_ = require 'lodash'
 minimatch = require 'minimatch'
 
 module.exports = (opts = {}) ->
@@ -15,9 +16,17 @@ module.exports = (opts = {}) ->
 
     compile_hooks: ->
       before_pass: (ctx) ->
-        f = ctx.file
-        if f.category == 'yaml'
-          locals = f.compile_options.data ?= {}
-          key = path.basename(f.file.relative).replace(/.yaml$/, '')
-          locals[key] = yaml.safeLoad(ctx.content)
+        if ctx.file.category == 'yaml' then add_yaml_to_locals.call(@, ctx)
+
       write: (f) -> f.category != 'yaml'
+
+    add_yaml_to_locals = (ctx) ->
+      f = ctx.file
+      locals = f.compile_options.data ?= {}
+      _path = path.relative(opts.source, f.file.relative).replace(/.yaml$/, '').split(path.sep)
+      res = memo = {}
+      for p, i in _path
+        memo[p] ?= {}
+        if i + 1 == _path.length then memo[p] = yaml.safeLoad(ctx.content)
+        memo = memo[p]
+      _.merge locals, res

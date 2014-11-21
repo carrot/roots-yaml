@@ -36,6 +36,10 @@ describe 'basic compile', ->
     p = path.join(@public, 'index.html')
     h.file.contains(p, ['doge', 'manatoge', 'fuzzy', 'cowlike'])
 
+  it "supports nested yaml files and sets the correct keys", ->
+    p = path.join(@public, 'index.html')
+    h.file.contains(p, 'fake pruett')
+
 describe 'custom directory', ->
   before (done) -> compile_fixture.call(@, 'custom_dir', -> done())
 
