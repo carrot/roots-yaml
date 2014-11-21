@@ -7,9 +7,10 @@
     "test": "test"
   },
   "dependencies": {
+    "js-yaml": "3.2.x",
     "lodash": "2.x",
-    "minimatch": "0.2.x",
-    "roots-util": "0.0.4"
+    "minimatch": "1.0.x",
+    "roots-util": "0.1.x"
   },
   "devDependencies": {
     "coffee-script": "1.7.x",
