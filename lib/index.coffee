@@ -30,3 +30,8 @@ module.exports = (opts = {}) ->
         if i + 1 == _path.length then memo[p] = yaml.safeLoad(ctx.content)
         memo = memo[p]
       _.merge locals, res
+      f.compile_options.yaml ?= script_tag_fn(locals)
+
+    script_tag_fn = (locals) ->
+      data = JSON.stringify(locals)
+      return (name = 'data') -> "<script>var #{name} = #{data};</script>"
