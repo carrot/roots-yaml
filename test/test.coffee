@@ -1,3 +1,4 @@
+_         = require 'lodash'
 path      = require 'path'
 fs        = require 'fs'
 should    = require 'should'
@@ -34,15 +35,31 @@ describe 'basic compile', ->
 
   it "exposes data into the view templates", ->
     p = path.join(@public, 'index.html')
-    h.file.contains(p, ['doge', 'manatoge', 'fuzzy', 'cowlike'])
+    _.each ['doge', 'manatoge', 'fuzzy', 'cowlike'], (e) ->
+      h.file.contains(p, e).should.be.true
 
   it "supports nested yaml files and sets the correct keys", ->
     p = path.join(@public, 'index.html')
-    h.file.contains(p, 'fake pruett')
+    h.file.contains(p, 'fake pruett').should.be.true
 
 describe 'custom directory', ->
   before (done) -> compile_fixture.call(@, 'custom_dir', -> done())
 
   it "loads data from a custom directory", ->
     p = path.join(@public, 'index.html')
-    h.file.contains(p, ['doge', 'manatoge', 'fuzzy', 'cowlike'])
+    _.each ['doge', 'manatoge', 'fuzzy', 'cowlike'], (e) ->
+      h.file.contains(p, e).should.be.true
+
+describe 'view helpers', ->
+  describe '#yaml', ->
+    before (done) -> compile_fixture.call(@, 'view_helper', -> done())
+
+    it "adds a script tag passing locals data to global JS var", ->
+      p = path.join(@public, 'index.html')
+      tag = '<script>var data = {"doge":{"wow":"such yaml"}};</script>'
+      h.file.contains(p, tag).should.be.true
+
+    it "accepts an override for the var name", ->
+      p = path.join(@public, 'manatoge.html')
+      tag = '<script>var manatoge = {"doge":{"wow":"such yaml"}};</script>'
+      h.file.contains(p, tag).should.be.true

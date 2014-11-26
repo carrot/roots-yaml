@@ -1,11 +1,12 @@
 Roots-YAML
 =============================
 
-[![npm](https://badge.fury.io/js/roots-yaml.png)](http://badge.fury.io/js/roots-yaml) [![tests](https://travis-ci.org/carrot/roots-yaml.png?branch=master)](https://travis-ci.org/carrot/roots-yaml) [![dependencies](https://david-dm.org/carrot/roots-yaml.png?theme=shields.io)](https://david-dm.org/carrot/roots-yaml) [![Coverage Status](https://img.shields.io/coveralls/carrot/roots-netlify.svg)](https://coveralls.io/r/carrot/roots-yaml?branch=master)
+[![npm](https://badge.fury.io/js/roots-yaml.png)](http://badge.fury.io/js/roots-yaml) [![tests](https://travis-ci.org/carrot/roots-yaml.png?branch=master)](https://travis-ci.org/carrot/roots-yaml) [![dependencies](https://david-dm.org/carrot/roots-yaml.png?theme=shields.io)](https://david-dm.org/carrot/roots-yaml) [![Coverage Status](https://img.shields.io/coveralls/carrot/roots-yaml.svg)](https://coveralls.io/r/carrot/roots-yaml?branch=master)
 
 Load YAML data files into your roots project.
 
 > **Note:** This project is in early development, and versioning is a little different. [Read this](http://markup.im/#q4_cRZ1Q) for more details.
+
 
 ### Why Should You Care?
 
@@ -16,6 +17,7 @@ templates.
 Roots-YAML lets you store your site data in [YAML](http://www.yaml.org/), a human
 friendly data serialization format and then have that data exposed for you to
 use in your roots view templates.
+
 
 ### Installation
 
@@ -31,6 +33,7 @@ module.exports =
     roots_yaml
       source: 'data'  # default value
 ```
+
 
 ### Usage
 
@@ -56,6 +59,26 @@ Inside my view templates:
 `data.staff` returns the data in `data/staff.yaml`
 
 `data.misc.manatoges` returns the data in `data/misc/manatoges`
+
+
+### View Helper
+
+Roots-YAML also adds a handy view helper to your Roots templates. Inside your
+views, add the following to insert a script tag setting a global `data`
+variable in your JS to your YAML data. You can also pass a string into `yaml`
+to change the name of the variable.
+
+```jade
+!= yaml()
+!= yaml('manatoge')
+```
+
+results in:
+
+```html
+<script>var data = {"doge":{"wow":"such yaml"}};</script>
+<script>var manatoge = {"doge":{"wow":"such yaml"}};</script>
+```
 
 ### License & Contributing
 
