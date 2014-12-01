@@ -1,6 +1,6 @@
 {
   "name": "roots-yaml",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "Load YAML data files into your roots project.",
   "main": "lib",
   "directories": {
@@ -9,7 +9,7 @@
   "dependencies": {
     "js-yaml": "3.2.x",
     "lodash": "2.x",
-    "minimatch": "1.0.x",
+    "minimatch": "2.0.x",
     "roots-util": "0.1.x"
   },
   "devDependencies": {
