@@ -1,6 +1,6 @@
 {
   "name": "roots-yaml",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "description": "Load YAML data files into your roots project.",
   "main": "lib",
   "directories": {
