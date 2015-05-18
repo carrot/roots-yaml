@@ -1,15 +1,13 @@
-Roots-YAML
-=============================
+# Roots-YAML
+[![npm](http://img.shields.io/npm/v/roots-yaml.svg?style=flat)](https://badge.fury.io/js/roots-yaml) [![tests](http://img.shields.io/travis/carrot/roots-yaml/master.svg?style=flat)](https://travis-ci.org/carrot/roots-yaml)  [![dependencies](http://img.shields.io/gemnasium/carrot/roots-yaml.svg?style=flat)](https://gemnasium.com/carrot/roots-yaml) [![devDependencies](https://img.shields.io/david/dev/carrot/roots-yaml.svg)](https://gemnasium.com/carrot/roots-yaml)
+[![Coverage Status](https://img.shields.io/coveralls/carrot/roots-yaml.svg)](https://coveralls.io/r/carrot/roots-yaml?branch=master)
 
-[![npm](https://badge.fury.io/js/roots-yaml.png)](http://badge.fury.io/js/roots-yaml) [![tests](https://travis-ci.org/carrot/roots-yaml.png?branch=master)](https://travis-ci.org/carrot/roots-yaml) [![dependencies](https://david-dm.org/carrot/roots-yaml.png?theme=shields.io)](https://david-dm.org/carrot/roots-yaml) [![Coverage Status](https://img.shields.io/coveralls/carrot/roots-yaml.svg)](https://coveralls.io/r/carrot/roots-yaml?branch=master)
 
 Load YAML data files into your roots project.
 
 > **Note:** This project is in early development, and versioning is a little different. [Read this](http://markup.im/#q4_cRZ1Q) for more details.
 
-
 ### Why Should You Care?
-
 It's important to maintain clean DRY code. Instead of writing messy and duplicated
 markup, you can use the power of HTML precompilers and pass data into your
 templates.
@@ -18,9 +16,7 @@ Roots-YAML lets you store your site data in [YAML](http://www.yaml.org/), a huma
 friendly data serialization format and then have that data exposed for you to
 use in your roots view templates.
 
-
 ### Installation
-
 - make sure you are in your roots project directory
 - `npm install roots-yaml --save`
 - modify your `app.coffee` file to include the extension, as such
@@ -34,9 +30,7 @@ module.exports =
       source: 'data'  # default value
 ```
 
-
 ### Usage
-
 Roots-YAML will look in your source directory and load any `.yaml`
 files into a `data` object for you to use in your views.
 
@@ -60,9 +54,7 @@ Inside my view templates:
 
 `data.misc.manatoges` returns the data in `data/misc/manatoges`
 
-
 ### View Helper
-
 Roots-YAML also adds a handy view helper to your Roots templates. Inside your
 views, add the following to insert a script tag setting a global `data`
 variable in your JS to your YAML data. You can also pass a string into `yaml`
@@ -81,6 +73,5 @@ results in:
 ```
 
 ### License & Contributing
-
 - Details on the license [can be found here](LICENSE.md)
 - Details on running tests and contributing [can be found here](contributing.md)
