@@ -48,11 +48,13 @@ data/
     manatoges.yaml
 ```
 
-Inside my view templates:
+Inside my view templates I can use the following line to inspect the `data` object provided by roots-yaml:
 
-`data.staff` returns the data in `data/staff.yaml`
+```jade
+pre=JSON.stringify(data, null, 2)
+```
 
-`data.misc.manatoges` returns the data in `data/misc/manatoges`
+You will notice that, for example, `data.staff` contains the data in `data/staff.yaml` and `data.misc.manatoges` contains the data in `data/misc/manatoges`.
 
 ### View Helper
 Roots-YAML also adds a handy view helper to your Roots templates. Inside your
